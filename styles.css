@@ -447,22 +447,19 @@ html {
     right: 10px;
 }
 
+
 .carousel-content {
     display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
+    flex-wrap: nowrap; /* Ensure cards stay in a single row */
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    gap: 10px; /* Add spacing between cards */
 }
 
 .publication-card {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-    text-align: left;
-    background: #fff;
-    padding: 20px;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    flex: 0 0 auto; /* Allow cards to shrink as needed */
+    width: 90%; /* Constrain card width */
+    max-width: 300px; /* Ensure cards aren't too large */
+    margin: 0 auto; /* Center cards horizontally */
 }
 
 .publication-card:hover {
@@ -744,6 +741,22 @@ html {
 
 html, body {
     overflow-x: hidden;
+}
+
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .header {
+        padding: 10px; /* Smaller padding for mobile */
+    }
 }
 
 
